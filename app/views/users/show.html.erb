@@ -1,11 +1,11 @@
 <center> <h1> Welcome to RecipeBox, <%= @user.username %></h1> 
 <img style='width: 265px' src="https://cdn.pixabay.com/photo/2015/08/25/03/50/herbs-906140_1280.jpg">
 <br><br>
-<a href="/recipes/new"> Click here to add a new recipe</a><br><br>
-<a href="/recipes">Click here to see all recipes</a><br><br>
-<a href="/categories/new">Create Category</a><br><br>
-<a href="/categories">See all categories </a><br><br>
-<a href="/logout">Log out</a>
+<%= link_to "Click here to add a new category", new_category_path(@category) %><br><br>
+<%= link_to "Click here to see all categories", categories_path(@category) %><br><br>
+<%= link_to "Click here to add a new recipe to an existing category", new_recipe_path(@recipe)%><br><br>
+<%= link_to "Click here to see all recipes", recipes_path(@recipe)%><br><br>
+<%= link_to "Log out", logout_path %>
 
 
 
