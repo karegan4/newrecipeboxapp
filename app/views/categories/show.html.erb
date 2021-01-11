@@ -5,4 +5,7 @@
 <% @category.recipes.each do |recipe| %>
     <%= link_to recipe.recipe_name, recipe_path(recipe) %>
 <%end%>
+<br><br>
+<%= link_to "Return to your homepage", user_path(@user)%>
+
 </center>

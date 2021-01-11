@@ -3,7 +3,7 @@
 <%= form_for(@recipe) do |f| %>
 
     <%= f.label :category_name, "Category Name"%>
-    <%= f.collection_select :category_id, Category.all, :id, :category_name, prompt: "Please choose a category for your recipe." %><br><br>
+    <%= f.collection_select :category_id, current_user.categories, :id, :category_name, prompt: "Please choose a category for your recipe." %><br><br>
 
     <%= f.label :recipe_name, "Recipe Name"%>
     <%= f.text_field :recipe_name%><br><br>

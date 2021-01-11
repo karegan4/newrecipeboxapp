@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
     def index
-        @recipes = Recipe.all
+        @recipes = current_user.recipes
         @user = session[:user_id]
     end
 
@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
     def new
         @recipe = Recipe.new
         @user = session[:user_id]
+        @categories = Category.all
     end
 
     def create

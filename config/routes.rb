@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create', as: 'session'
-  post '/session', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   resources :recipes
   resources :categories
+  
+  
 end
