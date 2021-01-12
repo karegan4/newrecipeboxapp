@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   resources :recipes
-  resources :categories
+  resources :categories do 
+    resources :recipes  
+  end
   
   
 end
