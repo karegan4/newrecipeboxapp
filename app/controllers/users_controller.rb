@@ -15,21 +15,14 @@ class UsersController < ApplicationController
     end
 
     def show
-        if current_user == User.find_by(id: params[:id])
-            @user = User.find_by(id: params[:id])
-        else
-            redirect_to '/error'
-        end
-    end
 
-    #display all registered users
-    def all
-        @users = User.all
+            @user = User.find_by(id: params[:id])
+
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password_digest)
+        params.require(:user).permit(:username, :email, :password)
     end
 end

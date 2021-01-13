@@ -8,7 +8,6 @@ class CategoriesController < ApplicationController
     def show
         @category = Category.find(params[:id])
         @user = session[:user_id]
-        
     end
 
     def new
@@ -40,6 +39,7 @@ class CategoriesController < ApplicationController
     end
 
     def destroy
+
     end
 
     private

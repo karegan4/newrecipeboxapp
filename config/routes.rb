@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create', as: 'session'
   get '/logout', to: 'sessions#destroy'
 
+
+  get '/auth/facebook/callback' => 'sessions#omniauth'
+
+  
   resources :recipes
   resources :categories do 
     resources :recipes  
