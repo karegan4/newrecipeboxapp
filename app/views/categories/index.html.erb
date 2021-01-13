@@ -1,10 +1,15 @@
-<h1> All Categories </h1>
+<h1> All of your categories </h1>
 <% @categories.each do |category|%>
     <% if category.user_id == session[:user_id]%>
-        <p> <%= link_to category.category_name, category_path(category) %>
+        <p> <%= link_to category.category_name, category_path(category) %> </p>
     <%end%>
 <%end%>
-<br><br><br><br>
+<br><br>
+<h1> All categories from all users </h1>
+<% @categories.each do |category| %>
+    <p><%= link_to category.category_name, category_path(category) %> </p>
+<%end%>
+<br><br>
 <%= link_to "Return to your homepage", user_path(@user)%>
 
 <br><br>

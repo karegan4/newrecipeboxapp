@@ -2,7 +2,6 @@ class CategoriesController < ApplicationController
     def index
         @categories = Category.all
         @user = session[:user_id]
-        
     end
 
     def show
@@ -24,7 +23,7 @@ class CategoriesController < ApplicationController
         if @category.save
             redirect_to category_path(@category)
         else
-            redirect_to new_category_path
+            redirect_to invalidcategory_path
         end
     end
 
@@ -40,6 +39,9 @@ class CategoriesController < ApplicationController
 
     def destroy
 
+    end
+
+    def invalidcategory
     end
 
     private

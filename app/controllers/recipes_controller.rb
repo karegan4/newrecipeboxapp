@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
         if params[:category_id]
             @recipe = Recipe.new(category_id: params[:category_id])
             @user = session[:user_id]
+            
         else
             @recipe = Recipe.new
             @recipes = Recipe.all

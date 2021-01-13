@@ -3,11 +3,12 @@
 
 
 <%= form_for(@recipe) do |f| %>
-
-    <%= f.label :category_name, "Category Name"%>
-
-    <%= f.collection_select :category_id, Category.all, :id, :category_name, prompt: "Please choose a category for your recipe." %><br><br>
-
+    <% if @recipe.category_id == nil %>
+        <%= f.label :category_name, "Category Name"%>
+        <%= f.collection_select :category_id, Category.all, :id, :category_name, prompt: "Please choose a category for your recipe." %><br><br>
+    <% else %>
+    <%= f.hidden_field :category_id, :value => params[:category_id] %>
+    <%end%>
     <%= f.label :recipe_name, "Recipe Name"%>
     <%= f.text_field :recipe_name%><br><br>
 
