@@ -4,5 +4,7 @@
 <p> <strong>Ingredients: </strong><%= @recipe.ingredients%> </p>
 
 <br><br>
+<%= link_to 'Edit Recipe', [:edit, @recipe]%>
+<br><br>
 <%= link_to "Return to your homepage", user_path(@user)%>
 <br><br>

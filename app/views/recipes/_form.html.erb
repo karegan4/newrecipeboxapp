@@ -1,0 +1,27 @@
+<center>
+
+<%= form_for(@recipe) do |f| %>
+    <% if @recipe.category_id == nil %>
+        <%= f.label :category_name, "Category Name"%>
+        <%= f.collection_select :category_id, Category.all, :id, :category_name, prompt: "Please choose a category for your recipe." %><br><br>
+    <% else %>
+    <%= f.hidden_field :category_id, :value => params[:category_id] %>
+    <%end%>
+    <%= f.label :recipe_name, "Recipe Name"%>
+    <%= f.text_field :recipe_name%><br><br>
+
+    <%= f.label :serving_size, "Serving Size"%>
+    <%= f.text_field :serving_size%><br><br>
+
+    <%= f.label :directions, "Directions"%>
+    <%= f.text_area :directions%><br><br>
+
+    <%= f.label :ingredients, "Ingredients"%>
+    <%= f.text_area :ingredients%><br><br>
+
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+
+    <%= f.submit %>
+    <%end%>
+    <br><br>
+</center>
