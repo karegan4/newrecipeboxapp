@@ -2,7 +2,7 @@
 
 <% @recipes.each do |recipe|%>
     <% if recipe.user_id == session[:user_id]%>
-        <%= link_to recipe.recipe_name, recipe_path(recipe)%>
+        <p> <%= link_to recipe.recipe_name, recipe_path(recipe)%></p>
     <%end%>
 <%end%>
 <br><br><br><br>

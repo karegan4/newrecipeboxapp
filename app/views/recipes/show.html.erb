@@ -1,3 +1,7 @@
+<center> 
+<% if @recipe.recipe_photo.attached?%>
+    <div><img> <%= image_tag @recipe.recipe_photo %></img></div>
+<%end%>
 <h1><%= @recipe.recipe_name %></h1>
 <p> <strong>Serving Size: </strong><%= @recipe.serving_size%></p>
 <p> <strong>Directions: </strong><%= @recipe.directions%> </p>
@@ -8,3 +12,4 @@
 <br><br>
 <%= link_to "Return to your homepage", user_path(@user)%>
 <br><br>
+</center>
