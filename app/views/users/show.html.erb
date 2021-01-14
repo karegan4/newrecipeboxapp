@@ -1,4 +1,4 @@
-<% if logged_in_user(@user) %>
+<% if logged_in? %>
 <head>
 <link rel="stylesheet"  type="text/css" href="/stylesheets/signedin.css">
 </head>
@@ -16,7 +16,7 @@
 <br><br></center>
 <div class="sidenav">
 <center><h3>Navigation</h3>
-<p><%=link_to "See most recent recipes", newestrecipes_path(@recipe)%></p>
+<p><%=link_to "See most recent recipes from all users", newestrecipes_path(@recipe)%></p>
 </center>
 </div>
 <% else %>
