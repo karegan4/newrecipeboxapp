@@ -11,9 +11,8 @@ Specs:
   - A Category has_many Users through Recipes
 - [x] Include at least one many-to-many relationship 
   - User model and Categories model have a many-to-many relationship
-- [ ] Include at least one class level ActiveRecord scope
-  method. Must be chainable, meaning that you use ActiveRecord Query methods with it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort)
-  - 
+- [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user
+  - A photo can be uploaded to a recipe (which is the "through" part of the has_many through relationship) by the app's user.
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   - A User must have a name, email and password. The email address must be unique.
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)

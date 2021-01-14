@@ -12,9 +12,9 @@ class RecipesController < ApplicationController
     end
 
     def new
+        @user = session[:user_id]
         if params[:category_id]
             @recipe = Recipe.new(category_id: params[:category_id])
-            @user = session[:user_id]
             
         else
             @recipe = Recipe.new
@@ -24,12 +24,12 @@ class RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.create(recipe_params)
-        
-        if @recipe.save
+        @recipe = Recipe.new(recipe_params)
+        if @recipe.valid?
+            @recipe.save
             redirect_to recipe_path(@recipe)
         else
-            render :new
+            redirect_to invalidrecipe_path
         end
     end
 

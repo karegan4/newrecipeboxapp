@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
 
   get '/invalidcategory', to: 'categories#invalidcategory'
+  get '/invalidrecipe', to: 'recipes#invalidrecipe'
 
 
 

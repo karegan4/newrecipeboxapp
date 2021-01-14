@@ -1,3 +1,4 @@
+<center>
 <h1> All of your categories </h1>
 <% @categories.each do |category|%>
     <% if category.user_id == session[:user_id]%>
@@ -13,4 +14,5 @@
 <%= link_to "Return to your homepage", user_path(@user)%>
 
 <br><br>
+</center>
 
