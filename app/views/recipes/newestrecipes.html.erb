@@ -3,6 +3,7 @@
 <% @recipes.each do |recipe|%>
     <p><%= link_to recipe.recipe_name, recipe_path(recipe) %>
 <%end%>
-
+<br><br><br><br>
+<%= link_to "Return to your homepage", user_path(@user)%>
 
 </center>

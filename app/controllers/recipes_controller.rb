@@ -48,6 +48,7 @@ class RecipesController < ApplicationController
 
     def newestrecipes
         @recipes = Recipe.newest_recipes(10)
+        @user = session[:user_id]
     end
 
     private

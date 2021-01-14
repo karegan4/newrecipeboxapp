@@ -15,8 +15,8 @@ Specs:
   - A photo can be uploaded to a recipe (which is the "through" part of the has_many through relationship) by the app's user.
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   - A User must have a name, email and password. The email address must be unique.
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-  - 
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+  - Recipes has a scope for newest_recipes with a limit of the 10 most recently added recipes.
 - [x] Include signup 
 - [x] Include login 
 - [x] Include logout 
