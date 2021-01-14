@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/invalidcategory', to: 'categories#invalidcategory'
   get '/invalidrecipe', to: 'recipes#invalidrecipe'
 
-
+  get '/newestrecipes', to: 'recipes#newestrecipes'
 
   get '/auth/facebook/callback' => 'sessions#omniauth'
 

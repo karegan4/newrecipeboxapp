@@ -46,6 +46,10 @@ class RecipesController < ApplicationController
     def destroy
     end
 
+    def newestrecipes
+        @recipes = Recipe.newest_recipes(10)
+    end
+
     private
 
     def recipe_params
