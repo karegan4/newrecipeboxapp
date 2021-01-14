@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     has_secure_password
     validates :username, presence: true
     validates :email, uniqueness: true
+    validates :email, presence: true
 
     def self.from_omniauth(auth)
         where(email: auth.info.email).first_or_initialize do |user|
