@@ -26,11 +26,11 @@ Specs:
   - Navigating to '/categories/:id/recipes' shows all recipes in that category and '/categories/:id/recipes/:id' shows show page for individual recipe
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
   - A new recipe is created at '/categories/:id/recipes/new'
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
-  - 
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+  - A user cannot submit a new user sign up form without a username. Error message will appear on screen.
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate

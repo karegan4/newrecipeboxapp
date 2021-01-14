@@ -15,15 +15,14 @@ class CategoriesController < ApplicationController
     end
 
     def create
+        @user = session[:user_id]
         @category = Category.new(category_params)
         if @category.valid?
             @category.user_id = session[:user_id]
             @category.save
-        end
-        if @category.save
             redirect_to category_path(@category)
         else
-            redirect_to invalidcategory_path
+            render 'new'
         end
     end
 
