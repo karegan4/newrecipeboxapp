@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
-    helper_method :current_user
+    helper_method :current_user, :logged_in?, :require_login
   
       #returns true if there is a user_id in the session hash, indicating a user is signed in
     def logged_in?
@@ -18,5 +18,11 @@ class ApplicationController < ActionController::Base
   
     def user_is_authenticated
       !!current_user
+    end
+
+    def require_login
+      unless logged_in?
+        redirect_to root_path
+      end
     end
 end

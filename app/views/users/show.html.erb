@@ -1,3 +1,4 @@
+<% if logged_in_user(@user) %>
 <head>
 <link rel="stylesheet"  type="text/css" href="/stylesheets/signedin.css">
 </head>
@@ -18,3 +19,6 @@
 <p><%=link_to "See most recent recipes", newestrecipes_path(@recipe)%></p>
 </center>
 </div>
+<% else %>
+<h2>You do not have access to this page. Please <%= link_to "log in", login_path(@user)%> or <%= link_to "sign up", new_user_path(@user)%>. </h2>
+<%end%>
