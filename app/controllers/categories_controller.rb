@@ -37,7 +37,14 @@ class CategoriesController < ApplicationController
     end
 
     def destroy
+        Category.find(params[:id]).destroy
+        redirect_to categories_path(@category)
+    end
 
+    def most_popular
+        @categories = Category.all
+        @category = @categories.max_by { |category| category.recipes.length }
+        @user = session[:user_id]
     end
 
     private

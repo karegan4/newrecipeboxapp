@@ -1,0 +1,10 @@
+<center>
+<h1> Category with the Most Recipes: </h1>
+Category Name: <%=@category.category_name%><br><br>
+Recipes: <% @category.recipes.each do |recipe|%>
+    <p><%= recipe.recipe_name%></p>
+    <%end%>
+<br><br>
+    <%= link_to "Return to your homepage", user_path(@user)%>
+
+</center>

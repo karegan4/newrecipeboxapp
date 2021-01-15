@@ -9,7 +9,8 @@
 <p> 1. Create a new category for your recipes <u> or</u> adding a new recipe to an existing category. </p>
 <p> 2. If you create your own category, make new recipes by adding them to that new category.</p>
 <p> 3. Use the navigation bar on the left to create and view your recipe box. </p>
-<br><br></center>
+<br><br>
+</center>
 <div class="sidenav">
 <center><u><h2>Navigation Menu</h2></u><br>
 <h3>Categories</h3>
@@ -24,9 +25,12 @@
 
 <p><%=link_to "See most recent recipes from all users", newestrecipes_path(@recipe)%></p>
 <br><br>
+<%= link_to "Categories with the most recipes", categories_most_popular_path(@category)%>
+<br><br>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <input type=submit value='Log Out'>
   <% end %>
+  <br><br>
 </center>
 </div>
 <% else %>
