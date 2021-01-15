@@ -1,10 +1,17 @@
-<center><h1> All Recipes </h1>
+<center><h1> Your Recipes </h1>
 
 <% @recipes.each do |recipe|%>
     <% if recipe.user_id == session[:user_id]%>
         <p> <%= link_to recipe.recipe_name, recipe_path(recipe)%></p>
     <%end%>
 <%end%>
+
+<br><br>
+<h1>All Recipes from All Users</h1>
+<% @allrecipes.each do |recipe|%>
+    <p> <%= link_to recipe.recipe_name, recipe_path(recipe)%></p>
+<%end%>
+
 <br><br><br><br>
 <%= link_to "Return to your homepage", user_path(@user)%>
 </center>

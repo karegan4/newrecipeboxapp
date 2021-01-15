@@ -6,7 +6,9 @@
 <p> <strong>Serving Size: </strong><%= @recipe.serving_size%></p>
 <p> <strong>Directions: </strong><%= @recipe.directions%> </p>
 <p> <strong>Ingredients: </strong><%= @recipe.ingredients%> </p>
-
+<%= form_tag recipe_path(@recipe.id), method: "delete" do %>
+    <%= submit_tag "Delete #{@recipe.recipe_name}" %>
+<% end %>
 <br><br>
 <%= link_to 'Edit Recipe', [:edit, @recipe]%>
 <br><br>

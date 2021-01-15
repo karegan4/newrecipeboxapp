@@ -1,22 +1,32 @@
-<% if logged_in? %>
+<% if logged_in_user(@user) %>
 <head>
 <link rel="stylesheet"  type="text/css" href="/stylesheets/signedin.css">
 </head>
 <center> <h1> Welcome to RecipeBox, <%= @user.username %></h1> 
 <img style='width: 265px' src="https://cdn.pixabay.com/photo/2015/08/25/03/50/herbs-906140_1280.jpg">
 <br><br>
+<h2>About This App</h2>
+<p> 1. Create a new category for your recipes <u> or</u> adding a new recipe to an existing category. </p>
+<p> 2. If you create your own category, make new recipes by adding them to that new category.</p>
+<p> 3. Use the navigation bar on the left to create and view your recipe box. </p>
+<br><br></center>
+<div class="sidenav">
+<center><u><h2>Navigation Menu</h2></u><br>
+<h3>Categories</h3>
 <%= link_to "Click here to add a new category", new_category_path(@category) %><br><br>
+
 <%= link_to "Click here to see all categories", categories_path(@category) %><br><br>
+<br>
+<h3>Recipes</h3>
 <%= link_to "Click here to add a new recipe to an existing category", new_recipe_path(@recipe)%><br><br>
-<%= link_to "Click here to see all recipes", recipes_path(@recipe)%><br><br>
+
+<%= link_to "Click here to see all recipes", recipes_path(@recipe)%>
+
+<p><%=link_to "See most recent recipes from all users", newestrecipes_path(@recipe)%></p>
+<br><br>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <input type=submit value='Log Out'>
   <% end %>
-
-<br><br></center>
-<div class="sidenav">
-<center><h3>Navigation</h3>
-<p><%=link_to "See most recent recipes from all users", newestrecipes_path(@recipe)%></p>
 </center>
 </div>
 <% else %>

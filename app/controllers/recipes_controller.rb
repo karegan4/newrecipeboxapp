@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
     def index
         @recipes = current_user.recipes
+        @allrecipes = Recipe.all
         @user = session[:user_id]
     end
 
@@ -46,6 +47,8 @@ class RecipesController < ApplicationController
     end
 
     def destroy
+        Recipe.find(params[:id]).destroy
+        redirect_to recipes_path(@recipe)
     end
 
     def newestrecipes

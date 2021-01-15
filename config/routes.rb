@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#omniauth'
 
+  delete '/recipes/:id', to: 'recipes#destroy', as: 'deleterecipe'
   
   resources :recipes
   resources :categories do 

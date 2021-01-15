@@ -40,9 +40,6 @@ class CategoriesController < ApplicationController
 
     end
 
-    def invalidcategory
-    end
-
     private
 
     def category_params
